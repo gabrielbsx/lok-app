@@ -1,4 +1,4 @@
-import{ useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import Slider from '../components/Slider';
 import RankingHome from '../components/RankingHome';
 import NewsHome from '../components/NewsHome';
@@ -13,12 +13,13 @@ import Equipment from '../components/Equipment';
 import Character from '../components/Character';
 import { useReward } from 'react-rewards';
 import { Button } from 'flowbite-react';
+import bgImg from '../assets/images/pst.jpg';
 
 function Home() {
     const [news, setNews] = useState<News[]>();
     const [newsError, setNewsError] = useState<boolean>(false);
     const [errorMessage, setErrorMessage] = useState<string>('');
-    const { reward, isAnimating } = useReward('rewardId', 'confetti');  
+    const { reward, isAnimating } = useReward('rewardId', 'confetti');
 
     useMemo(() => {
         (async () => {
@@ -39,14 +40,20 @@ function Home() {
 
     return (
         <div>
-            <Slider />
+            <div className="
+            w-screen h-96 bg-green-500 bg-cover 
+            bg-center bg-[url('https://images5.alphacoders.com/861/861521.jpg')]
+            mb-8 opacity-50"
+            >
+            </div>
             {newsError && <ErrorMessage message={errorMessage} where={'Notícias'} />}
             <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 mt-5">
                 <div className="col-span-2">
                     <NewsHome />
+                    <Slider />
                 </div>
-                <div className="col-span-2 mx-auto grid grid-cols-1 xl:grid-cols-5 lg:grid-cols-4 gap-5">
-                    <div className="col-span-3 lg:col-span-4 xl:col-span-3">
+                <div className="col-span-2 mx-auto grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 gap-5 border-y-4 border-yellow-500 py-5">
+                    <div className="col-span-3 lg:col-span-4 xl:col-span-3 ">
                         <RankingHome />
                     </div>
                     <iframe

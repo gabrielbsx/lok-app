@@ -44,7 +44,7 @@ function Menu() {
     const page = path.split('/')[1] === '' ? 'home' : path.split('/')[1];
 
     return (
-        <div className="m-0 z-10">
+        <div className="m-0 z-10 sticky top-0">
             <Helmet>
                 <title>WYD Imperial - {page}</title>
                 <meta name="description" content={`WYD Imperial - ${page}`} />
@@ -68,21 +68,85 @@ function Menu() {
                 <Navbar.Brand onClick={() => navigate('/')}>
                     <img
                         src={Logo}
-                        className="mr-3 h-6 sm:h-12 cursor-pointer"
+                        className="ml-3 h-6 sm:h-12 cursor-pointer"
                         alt="Imperial Logo"
                     />
                 </Navbar.Brand>
-                <div className="flex flex-wrap gap-2 md:order-2">
+                
+                <Navbar.Collapse>
+                    <div className="items-center flex gap-4 md:flex-row flex-col">
+                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/' ? "text-yellow-400" : ""}`} to="/">
+                            Início
+                        </Link>
+                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/news' ? "text-yellow-400" : ""}`} to="/news">
+                            Notícias
+                        </Link>
+                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/downloads' ? "text-yellow-400" : ""}`} to="/downloads">
+                            Descarregar
+                        </Link>
+                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/donate' ? "text-yellow-400" : ""}`} to="/donate">
+                            Ajuda
+                        </Link>
+                        <Dropdown
+                            arrowIcon={true}
+                            inline={true}
+                            label="O Jogo"
+                        >
+                            <Dropdown.Item onClick={() => navigate('/history')}>
+                                <Link className={location.pathname === '/history' ? "text-neutral-400" : ""} to="/history">
+                                    História
+                                </Link>
+                            </Dropdown.Item>
+                            <Dropdown.Item onClick={() => navigate('/interface')}>
+                                <Link className={location.pathname === '/interface' ? "text-neutral-400" : ""} to="/interface">
+                                    Interface
+                                </Link>
+                            </Dropdown.Item>
+                            <Dropdown.Item onClick={() => navigate('/rules')}>
+                                <Link className={location.pathname === '/rules' ? "text-neutral-400" : ""} to="/rules">
+                                    Regras
+                                </Link>
+                            </Dropdown.Item>
+                            <Dropdown.Item onClick={() => navigate('/tutoriais')}>
+                                <Link className={location.pathname === '/tutorials' ? "text-neutral-400" : ""} to="/tutorials">
+                                    Tutoriais
+                                </Link>
+                            </Dropdown.Item>
+                            <Dropdown.Item onClick={() => navigate('/droplist')}>
+                                <Link className={location.pathname === '/droplist' ? "text-neutral-400" : ""} to="/droplist">
+                                    Lista de Drop
+                                </Link>
+                            </Dropdown.Item>
+                        </Dropdown>
+                        <Dropdown
+                            arrowIcon={true}
+                            inline={true}
+                            label="Suporte"
+                        >
+                            {/* <Dropdown.Item onClick={() => navigate('/faq')}>
+                                    <Link className={location.pathname === '/faq' ? "text-red-400" : ""} to="/faq">
+                                        FAQ
+                                    </Link>
+                                </Dropdown.Item> */}
+                            {/* <Dropdown.Item onClick={() => navigate('/support')}>
+                                    <Link className={location.pathname === '/support' ? "text-red-400" : ""} to="/support">
+                                        Suporte
+                                    </Link>
+                                </Dropdown.Item> */}
+                            <Dropdown.Item onClick={() => navigate('/contact')}>
+                                <Link className={location.pathname === '/contact' ? "text-neutral-400" : ""} to="/contact">
+                                    Contato
+                                </Link>
+                            </Dropdown.Item>
+                        </Dropdown>
+                        <div className="flex flex-wrap gap-2 md:order-2">
                     {/*<DarkThemeToggle />*/}
                     <Dropdown
                         arrowIcon={false}
-                        inline={true}
+                        // inline={true}
+                        size="sm"
                         label={localStorage.getItem('token') !== null ? (
-                            <Avatar
-                                alt="User settings"
-                                rounded={true}
-                                status="offline"
-                            />
+                            'Conta'
                         ) : (
                             <div className="bg-neutral-700 border-4 hover:bg-neutral-900 border-neutral-500 shadow p-2 text-neutral-200 rounded-2xl">
                                 <UserIcon className="h-5 w-5" />
@@ -178,72 +242,6 @@ function Menu() {
                     </Dropdown>
                     <Navbar.Toggle />
                 </div>
-                <Navbar.Collapse>
-                    <div className="items-center flex gap-4 md:flex-row flex-col">
-                        <Link className={`px-4 py-2 rounded-lg hover:bg-neutral-700 ${location.pathname === '/' ? "bg-neutral-600" : ""}`} to="/">
-                            Início
-                        </Link>
-                        <Link className={`px-4 py-2 rounded-lg hover:bg-neutral-700 ${location.pathname === '/news' ? "bg-neutral-600" : ""}`} to="/news">
-                            Notícias
-                        </Link>
-                        <Link className={`px-4 py-2 rounded-lg hover:bg-neutral-700 ${location.pathname === '/downloads' ? "bg-neutral-600" : ""}`} to="/downloads">
-                            Baixar
-                        </Link>
-                        <Link className={`px-4 py-2 rounded-lg hover:bg-neutral-700 ${location.pathname === '/donate' ? "bg-neutral-600" : ""}`} to="/donate">
-                            Doação
-                        </Link>
-                        <Dropdown
-                            arrowIcon={true}
-                            inline={true}
-                            label="O Jogo"
-                        >
-                            <Dropdown.Item onClick={() => navigate('/history')}>
-                                <Link className={location.pathname === '/history' ? "text-neutral-400" : ""} to="/history">
-                                    História
-                                </Link>
-                            </Dropdown.Item>
-                            <Dropdown.Item onClick={() => navigate('/interface')}>
-                                <Link className={location.pathname === '/interface' ? "text-neutral-400" : ""} to="/interface">
-                                    Interface
-                                </Link>
-                            </Dropdown.Item>
-                            <Dropdown.Item onClick={() => navigate('/rules')}>
-                                <Link className={location.pathname === '/rules' ? "text-neutral-400" : ""} to="/rules">
-                                    Regras
-                                </Link>
-                            </Dropdown.Item>
-                            <Dropdown.Item onClick={() => navigate('/tutoriais')}>
-                                <Link className={location.pathname === '/tutorials' ? "text-neutral-400" : ""} to="/tutorials">
-                                    Tutoriais
-                                </Link>
-                            </Dropdown.Item>
-                            <Dropdown.Item onClick={() => navigate('/droplist')}>
-                                <Link className={location.pathname === '/droplist' ? "text-neutral-400" : ""} to="/droplist">
-                                    Lista de Drop
-                                </Link>
-                            </Dropdown.Item>
-                        </Dropdown>
-                        <Dropdown
-                            arrowIcon={true}
-                            inline={true}
-                            label="Suporte"
-                        >
-                            {/* <Dropdown.Item onClick={() => navigate('/faq')}>
-                                    <Link className={location.pathname === '/faq' ? "text-red-400" : ""} to="/faq">
-                                        FAQ
-                                    </Link>
-                                </Dropdown.Item> */}
-                            {/* <Dropdown.Item onClick={() => navigate('/support')}>
-                                    <Link className={location.pathname === '/support' ? "text-red-400" : ""} to="/support">
-                                        Suporte
-                                    </Link>
-                                </Dropdown.Item> */}
-                            <Dropdown.Item onClick={() => navigate('/contact')}>
-                                <Link className={location.pathname === '/contact' ? "text-neutral-400" : ""} to="/contact">
-                                    Contato
-                                </Link>
-                            </Dropdown.Item>
-                        </Dropdown>
                     </div>
                 </Navbar.Collapse>
             </Navbar>

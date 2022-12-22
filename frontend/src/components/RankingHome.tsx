@@ -83,22 +83,22 @@ function RankingHome() {
             <div className="flex justify-center gap-4 font-bold text-2xl items-center uppercase border-neutral-700 p-4 text-center">
                 <div>Ranking</div>
             </div>
-            <div className="p-4 bg-neutral-900 rounded-lg mb-2">
+            <div className="p-4 bg-yellow-500 rounded-lg mb-4">
                 <div className="flex justify-between items-center gap-10">
                     <div>
                         <label>Ranqueamento por: </label>
                         <select
-                            className="bg-neutral-800 text-neutral-100 px-4 py-1 outline-none rounded-md focus:outline-none"
+                            className="bg-white-300 text-yellow-500 px-4 py-1 outline-none rounded-md focus:outline-none"
                             onChange={(e) => setOrder(e.target.value)}
                         >
                             <option value="evolution_order" selected>Level</option>
                             <option value="elo">Elo</option>
-                            <option value="kills">Kills</option>
-                            <option value="deaths">Deaths</option>
+                            {/* <option value="kills">Kills</option> */}
+                            {/* <option value="deaths">Deaths</option> */}
                         </select>
                     </div>
                     <button
-                        className="bg-neutral-800 text-neutral-100 px-4 py-2 outline-none rounded-md focus:outline-none"
+                        className="bg-blue-700 text-neutral-100 px-4 py-2 outline-none rounded-md focus:outline-none"
                         onClick={() => setRefresh(!refresh)}
                     >
                         Atualizar ranking
@@ -106,17 +106,17 @@ function RankingHome() {
                 </div>
             </div>
             {!loading ? (
-                <Table className="border-8 border-neutral-900 shadow-neutral-900 shadow-2xl">
+                <Table className="border-8 border-stone-800 shadow-neutral-900 shadow-2xl">
                     <Table.Head>
-                        <Table.HeadCell className="dark:bg-neutral-700">#</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-neutral-700">Nick</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-neutral-700">Level</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-neutral-700">Classe</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-neutral-700">Evolução</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-neutral-700">Elo</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-neutral-700">Kills</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-neutral-700">Deaths</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-neutral-700">Reino</Table.HeadCell>
+                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">#</Table.HeadCell>
+                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Nick</Table.HeadCell>
+                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Level</Table.HeadCell>
+                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Classe</Table.HeadCell>
+                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Evolução</Table.HeadCell>
+                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Elo</Table.HeadCell>
+                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Kills</Table.HeadCell>
+                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Deaths</Table.HeadCell>
+                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Reino</Table.HeadCell>
                     </Table.Head>
                     <Table.Body className="divide-y">
                         {ranking.map((character, index) => (
@@ -207,8 +207,8 @@ function RankingHome() {
             < div className="flex justify-center overflow-hidden">
                 {meta && !characterSelected && (
                     <ReactPaginate
-                        previousLabel={'Anterior'}
-                        nextLabel={'Próximo'}
+                        previousLabel={'Voltar'}
+                        nextLabel={'Avançar'}
                         breakLabel={'...'}
                         pageCount={meta.last_page}
                         onPageChange={handlePageClick}
