@@ -4,8 +4,8 @@ import React from 'react';
 function Downloads() {
     return (
         <>                                      
-            <div className="p-8 flex flex-row items-end justify-around" > {/* bg-green-50/20 */}
-                <div className="max-w-sm">
+            <div className="p-8 flex flex-row items-end justify-around" >
+                <div className="max-w-sm mr-10">
                     <div className="text-start font-bold text-4xl uppercase mb-8">
                         Download  wyd
                     </div>
@@ -18,7 +18,7 @@ function Downloads() {
                         </p>
                         <a
                             className="flex justify-between
-                            flexbutton bg-gradient-to-tr from-yellow-400 via-yellow-400 to-yellow-500 py-4 px-10 hover:bg-gradient-to-bl text-white font-black uppercase rounded-xl"
+                            flexbutton bg-[#E3B04B] py-4 px-10 hover:bg-[#fff]/70 text-white font-black uppercase rounded-xl"
                             href="https://www.mediafire.com/file/o04jrrhgtwhzfrz/WYD_Imperial_Instalador.exe/file"
                             target="_blank"
                         >
@@ -27,7 +27,7 @@ function Downloads() {
                         </a>
                         <a
                             className="flex justify-between
-                            button bg-gradient-to-tr from-cyan-700 via-cyan-700 to-cyan-800 py-4 px-10 hover:bg-gradient-to-bl text-white font-black uppercase rounded-xl"
+                            button bg-[#4b8de3] py-4 px-10  hover:bg-[#fff]/70 text-white font-black uppercase rounded-xl"
                             href="https://www.sendspace.com/file/7jlxhh"
                             target="_blank"
                         >
@@ -36,7 +36,7 @@ function Downloads() {
                         </a>
                         <a
                             className="flex justify-between
-                            button bg-gradient-to-tr from-red-700 via-red-700 to-red-800 py-4 px-10 hover:bg-gradient-to-bl text-white font-black uppercase rounded-xl"
+                            button bg-[#e34b4b] py-4 px-10  hover:bg-[#fff]/70 text-white font-black uppercase rounded-xl"
                             href="https://www.mediafire.com/file/o04jrrhgtwhzfrz/WYD_Imperial_Instalador.exe/file"
                             target="_blank"
                         >
@@ -46,7 +46,7 @@ function Downloads() {
                     </Card>
                 </div>
                 <div>
-                    <div className="text-left mt-5 font-bold text-2xl uppercase mb-8">
+                    <div className="text-white text-left mt-5 font-bold text-2xl uppercase mb-8">
                         Requesitos do Sistema
                     </div>
 

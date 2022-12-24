@@ -117,61 +117,16 @@ function Donate() {
                     </div>
                 </div>
             )}
-            <div className="text-center text-white uppercase text-4xl font-bold mt-4 mb-2 py-3">
+            <div className="text-center text-white uppercase text-4xl font-bold my-8 py-3">
                 Doação
             </div>
-            <div className="flex justify-center">
-                <div className="w-2/4 my-2 p-4 bg-trasparent border-4 border-neutral-700 text-justify">
-                    <div className="border-2 border-neutral-700 rounded p-2 mb-2">
-                        <p className="p-2 mb-3 text-center font-bold uppercase">Ajude a manter o WYD Lord Of The Rings!</p>
-                        <p className="text-justify">
-                            Lord Of The Rings é um servidor gratuito, que não possui nenhum tipo de patrocínio.
-                            O servidor é mantido por doações de jogadores, que são utilizadas para pagar os custos do servidor, como hospedagem, domínio, manutenção, vps, etc.
-                            <br />
-                            <br />
-                            Você pode ajudar o servidor a permanecer online, doando para o servidor. Ao doar, você receberá um pacote de doação com itens e/ou moedas para utilizar no jogo.
-                            <br />
-                            <br />
-                            <div className="flex items-center gap-1">
-                                <svg className="w-10 h-10 inline-block text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                    <path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm.707-9.707a1 1 0 00-1.414 0L8 8.586V11a1 1 0 102 0V8.586l1.293-1.293a1 1 0 000-1.414z" clipRule="evenodd"></path>
-                                </svg>
-                                <span className="font-bold">OBS:</span> Ao doar, você concorda com os <a onClick={() => navigate('/rules')} className="text-blue-400 cursor-pointer">Termos de Uso</a> e <a onClick={() => navigate('/rules')} className="text-blue-400 cursor-pointer">Regras</a> do servidor.
-                            </div>
-                        </p>
-                    </div>
-                    <div className="flex gap-10 justify-center items-center py-4">
-                        <div>
-                            <img width="100px" src={PicpayImage} alt="" loading="lazy" />
-                        </div>
-                        <div>
-                            <img width="150px" src={MercadoPagoImage} alt="" loading="lazy" />
-                        </div>
-                        <div>
-                            <img width="330px" src={PaymentsImage} alt="" loading="lazy" />
-                        </div>
-                        <div>
-                            <img width="130px" src={PixImage} alt="" loading="lazy" />
-                        </div>
-                    </div>
-                    <div className="mt-2 flex w-40 mx-auto items-center justify-center">
-                        <Button
-                            color={agree ? 'failure' : 'success'}
-                            onClick={() => setAgree(!agree)}
-                        >
-                            {agree ? 'Não concordo' : 'Concordar e doar'}
-                        </Button>
-                    </div>
-                </div>
-            </div>
-            {agree && (
-                <div className="grid grid-cols-2 gap-6 items-start p-10">
+                <div className="grid grid-cols-3 gap-8 items-start pb-8">
                     {packages.map((pkg, index) => (
                         <div
                             key={index}
-                            className="bg-[#2B2B28] border-2 border-[#E3B04B]"
+                            className="bg-[#2B2B28] border-2 border-[#E3B04B] p-8"
                         >
-                            <div className="bg-[#E3B04B] py-4 text-center text-white font-bold">
+                            <div className="bg-[#39311D] py-4 text-center text-[#E3B04B] font-bold border-2 border-[#FFD369]">
                                 {pkg.name}
                             </div>
                             <div className="text-center items-center flex flex-row justify-around">
@@ -214,7 +169,7 @@ function Donate() {
                                     </div>
                                 </div>
                             )}
-                            <div className="flex flex-row-reverse justify-center gap-4 items-center">
+                            <div className="flex flex-col justify-center gap-4 p-6">
                                 {user && localStorage.getItem('token') && (
                                     <>
                                         <Button
@@ -241,23 +196,23 @@ function Donate() {
                         </div>
                     ))}
                 </div>
-            )}
-            <div className="mt-4 p-4 border border-neutral-700 bg-neutral-800 shadow">
-                <div className="flex mb-3 bg-neutral-700 py-3 border border-neutral-600 rounded justify-center">
+
+            <div className="mt-10 p-4 border border-[#FFD369] bg-[#2B2B28] shadow">
+                <div className="flex mb-3 bg-[#39311D] text-[#E3B04B] py-3 border border-[#FFD369] justify-center">
                     Doações
                 </div>
                 <div className="flex justify-center">
                     <Table>
                         <Table.Head>
-                            <Table.HeadCell className="dark:bg-neutral-700">Pacote</Table.HeadCell>
-                            <Table.HeadCell className="dark:bg-neutral-700">Método</Table.HeadCell>
-                            <Table.HeadCell className="dark:bg-neutral-700">Data</Table.HeadCell>
-                            <Table.HeadCell className="dark:bg-neutral-700">Estado</Table.HeadCell>
-                            <Table.HeadCell className="dark:bg-neutral-700"></Table.HeadCell>
+                            <Table.HeadCell className="dark:bg-[#585858]">Pacote</Table.HeadCell>
+                            <Table.HeadCell className="dark:bg-[#585858]">Método</Table.HeadCell>
+                            <Table.HeadCell className="dark:bg-[#585858]">Data</Table.HeadCell>
+                            <Table.HeadCell className="dark:bg-[#585858]">Estado</Table.HeadCell>
+                            <Table.HeadCell className="dark:bg-[#585858]"></Table.HeadCell>
                         </Table.Head>
                         <Table.Body>
                             {donates.map((donate, index) => (
-                                <Table.Row key={index} className="bg-neutral-700/75 hover:bg-neutral-700">
+                                <Table.Row key={index} className="bg-[#383838] hover:bg-neutral-700">
                                     <Table.Cell>{donate.package.name}</Table.Cell>
                                     <Table.Cell>{donate.method}</Table.Cell>
                                     <Table.Cell>

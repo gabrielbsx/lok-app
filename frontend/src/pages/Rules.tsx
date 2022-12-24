@@ -76,11 +76,11 @@ const rules = `
 `;
 function Rules(): JSX.Element {
     return (
-        <div className="p-3 bg-gradient-to-l from-neutral-700 via-neutral-800 to-neutral-900 shadow-2xl shadow-black rounded-xl">
-            <header className="uppercase font-bold text-xl pb-4 text-center">
+        <div className="p-3 from-neutral-700 mx-16">
+            <header className="uppercase font-bold text-xl py-8 text-center text-white">
                 <h1>Regras</h1>
             </header>
-            <section className="p-4 rounded-xl bg-neutral-900 border-2 border-neutral-800">
+            <section className="p-4 bg-[#2B2B28] border border-[#FFD369]">
                 <ReactMarkdown
                     remarkPlugins={[gfm]}
                     rehypePlugins={[rehypeRaw]}

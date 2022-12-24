@@ -153,8 +153,8 @@ function Guilmark(): JSX.Element {
 
     return (
         <>
-            <article className="bg-neutral-800 px-3 py-4 border border-neutral-700 rounded-lg">
-                <header className="text-center font-bold py-3 rounded-lg bg-neutral-700 border border-neutral-600">
+            <article className="px-3 py-4 border border-[#FFD369] bg-[#2B2B28]">
+                <header className="text-center font-bold py-3 bg-[#39311D] border border-[#FFD369] text-[#E3B04B]">
                     <h1>Guildmark</h1>
                 </header>
                 <div className="px-4 py-6 container">

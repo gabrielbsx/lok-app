@@ -117,12 +117,12 @@ function Donation() {
           </div>
         </div>
       )}
-      <div className="text-center mt-4 bg-neutral-800 border-neutral-700 border mb-2 rounded py-3">
+      <div className="text-center mt-4 bg-[#39311D] border-[#FFD369] text-[#FFD369] border mb-2 py-3">
         Pacotes de doação
       </div>
-      <div className="my-2 p-4 rounded bg-neutral-800 border border-neutral-700 text-justify">
-        <div className="border border-neutral-700 rounded p-2 mb-2">
-          <p className="bg-neutral-700 p-2 mb-3 text-center font-bold">Ajude a manter o WYD Imperial!</p>
+      <div className="my-2 p-4 bg-[#2B2B28] border-[#FFD369] border text-justify">
+        <div className=" bg-[#2B2B28] border-[#FFD369] p-2 mb-2">
+          <p className="bg-[#39311D] text-[#E3B04B] p-2 mb-3 text-center font-bold">Ajude a manter o WYD Imperial!</p>
           <div className="py-1 px-3">
             <p className="mb-4 text-justify"><span className="text-red-300 uppercase">Atenção:</span> Ao doar você concorda com os termos de uso do site, e que o dinheiro será usado para manter o servidor online, e para a compra de novos itens para o servidor.</p>
             <p className="mb-4 text-center">Leia os termos e regras antes de concordar.</p>
@@ -131,7 +131,7 @@ function Donation() {
             </div>
           </div>
         </div>
-        <div className="flex justify-center p-2 my-4 border border-neutral-700 rounded flex-col">
+        <div className="flex justify-center p-2 my-4  border-[#FFD369]  flex-col">
           <p className="bg-neutral-700 text-center text-white font-bold p-2 uppercase">Métodos de pagamento</p>
           <div className="flex gap-10 justify-center items-center bg-neutral-800 p-2">
             <div>
@@ -233,8 +233,8 @@ function Donation() {
           ))}
         </div>
       )}
-      <div className="mt-4 p-4 border border-neutral-700 bg-neutral-800 shadow">
-        <div className="flex mb-3 bg-neutral-700 py-3 border border-neutral-600 rounded justify-center">
+      <div className="mt-4 p-4 border border-[#FFD369] bg-[#2B2B28]">
+        <div className="flex mb-3 bg-[#39311D] py-3 justify-center text-[#E3B04B]">
           Doações
         </div>
         <div className="flex justify-center">

@@ -40,24 +40,28 @@ function Home() {
 
     return (
         <div>
-            <div className="
-            w-screen h-96 bg-green-500 bg-cover 
+            {/* <div className="
+            w-full h-96 bg-green-500 bg-cover 
             bg-center bg-[url('https://images5.alphacoders.com/861/861521.jpg')]
-            mb-8 opacity-50"
-            >
+            mb-8 opacity-50">
+            </div> */}
+            <div className="
+            bg-scroll  
+            w-full h-96 bg-cover 
+            bg-center bg-[url('https://i.postimg.cc/kgVWJprd/aa.png')]
+            mb-8 opacity-50">
             </div>
             {newsError && <ErrorMessage message={errorMessage} where={'Notícias'} />}
-            <div className="flex flex-col lg:grid lg:grid-cols-2 gap-4 mt-5">
+            <div className="">
                 <div className="col-span-2">
                     <NewsHome />
-                    <Slider />
                 </div>
-                <div className="col-span-2 mx-auto grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 gap-5 border-y-4 border-yellow-500 py-5">
+                <div className="col-span-2 mx-16 grid grid-cols-1 xl:grid-cols-4 lg:grid-cols-4 gap-5 pt-16">
                     <div className="col-span-3 lg:col-span-4 xl:col-span-3 ">
                         <RankingHome />
                     </div>
                     <iframe
-                        className="w-full lg:col-span-2 xl:col-span-1"
+                        className="w-full lg:col-span-2 xl:col-span-1 pt-28"
                         src="https://ptb.discord.com/widget?id=975216695222358046&theme=dark"
                         height="500"
                         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"

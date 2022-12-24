@@ -67,8 +67,8 @@ function SignIn() {
     };
 
     return (
-        <div className="lg:w-1/2 lg:mx-auto my-4 dark:bg-neutral-800 p-4 rounded-lg border bg-gray-100 dark:border-neutral-700 shadow-lg">
-            <form method="POST" onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4">
+        <div className="w-96 lg:mx-auto my-4 p-4 border border-[#FFD369] bg-[#2B2B28]">
+            <form method="POST" onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-full">
                 <div>
                     {error && (
                         <div className="mb-4">
@@ -79,7 +79,7 @@ function SignIn() {
                     <div className="mb-2 block">
                         <Label
                             htmlFor="username1"
-                            value="Seu Usuário"
+                            value="Usuário"
                         />
                     </div>
                     <TextInput
@@ -114,7 +114,7 @@ function SignIn() {
                     <div className="mb-2 block">
                         <Label
                             htmlFor="password1"
-                            value="Sua senha"
+                            value="Senha"
                         />
                     </div>
                     <TextInput
@@ -146,12 +146,12 @@ function SignIn() {
                         render={({ message }) => <small className="text-red-400">{message}</small>}
                     />
                 </div>
-                <div className="mx-auto">
+                <div className="mx-auto bg-[#39311D] border border-[#FFD369] text-[#E3B04B] hover:bg-[#292929]/50">
                     <GoogleReCaptcha
                         onVerify={token => setToken(token)}
                         refreshReCaptcha={refreshReCaptcha}
                     />
-                    <Button type="submit">
+                    <Button type="submit" color=''>
                         {loading ? (
                             <Spinner color="gray" size="md" />
                         ) : (

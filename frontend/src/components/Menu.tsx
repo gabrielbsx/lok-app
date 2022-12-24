@@ -224,12 +224,6 @@ function Menu() {
                     <Spinner aria-label="Extra large spinner" size="xl" />
                 </div>
             )}
-            {/* <div className="
-            bg-scroll  
-            w-full h-96 bg-cover 
-            bg-center bg-[url('https://i.postimg.cc/YCnJCs5t/banner-Lok-Trans.png')]
-            mb-8 opacity-50">
-            </div> */}
         </div>
     );
 }

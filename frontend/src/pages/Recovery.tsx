@@ -106,8 +106,8 @@ function Recovery() {
 
     return (
         <div className="">
-            <div className="lg:w-1/2 lg:mx-auto my-4 dark:bg-neutral-800 p-4 rounded-lg border bg-gray-100 dark:border-neutral-700 shadow-lg">
-                <form method="POST" onSubmit={handleSubmitRecoveryToken(onSubmitRecoveryToken)} className="flex flex-col gap-4">
+            <div className="w-96 lg:mx-auto my-4 p-4 border border-[#FFD369] bg-[#2B2B28]">
+                <form method="POST" onSubmit={handleSubmitRecoveryToken(onSubmitRecoveryToken)} className="flex flex-col gap-4 p-4">
                     <div>
                         {error && (
                             <div className="mb-4">
@@ -206,12 +206,12 @@ function Recovery() {
                             </div>
                         </div>
                     </div>
-                    <div className="mx-auto">
+                    <div className="mx-auto bg-[#39311D] border border-[#FFD369] text-[#E3B04B] hover:bg-[#292929]/50">
                         <GoogleReCaptcha
                             onVerify={token => setToken(token)}
                             refreshReCaptcha={true}
                         />
-                        <Button type="submit">
+                        <Button type="submit" color=''>
                             {loading ? (
                                 <Spinner color="gray" size="md" />
                             ) : (
@@ -223,8 +223,8 @@ function Recovery() {
                     </div>
                 </form>
             </div>
-            <div className="lg:w-1/2 lg:mx-auto my-4 dark:bg-neutral-800 p-4 rounded-lg border bg-gray-100 dark:border-neutral-700 shadow-lg">
-                <form method="POST" onSubmit={handleSubmitRecovery(onSubmitRecovery)} className="flex flex-col gap-4">
+            <div className="w-96 lg:mx-auto my-4 p-4 border border-[#FFD369] bg-[#2B2B28]">
+                <form method="POST" onSubmit={handleSubmitRecovery(onSubmitRecovery)} className="flex flex-col gap-4 p-4">
                     <div>
                         {error && (
                             <div className="mb-4">
@@ -254,12 +254,12 @@ function Recovery() {
                             render={({ message }) => <small className="text-red-400">{message}</small>}
                         />
                     </div>
-                    <div className="mx-auto">
+                    <div className="mx-auto bg-[#39311D] border border-[#FFD369] text-[#E3B04B] hover:bg-[#292929]/50">
                         <GoogleReCaptcha
                             onVerify={token => setToken(token)}
                             refreshReCaptcha={true}
                         />
-                        <Button type="submit">
+                        <Button type="submit" color=''>
                             {loading ? (
                                 <Spinner color="gray" size="md" />
                             ) : (
