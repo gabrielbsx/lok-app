@@ -11,8 +11,8 @@ import Theme from './utils/Theme';
 import { PersistGate } from 'redux-persist/integration/react';
 import 'react-toastify/dist/ReactToastify.min.css';
 
-// document.body.className = 'dark:bg-neutral-900 dark:text-neutral-200 max-w-screen';
-document.body.className = 'bg-black dark:text-neutral-200 max-w-screen';
+// #585858
+document.body.className = 'bg-[#181818] dark:text-neutral-200 max-w-screen';
 
 ReactDOM.createRoot(document.getElementById('root') as HTMLElement).render(
   <React.StrictMode>

@@ -2,7 +2,7 @@ export default {
     theme: {
         navbar: {
             // base: 'border-neutral-200 bg-white border-2 border-t-0 px-2 py-4 dark:border-neutral-900 dark:bg-neutral-800 sm:px-4 shadow-lg shadow-neutral-800 z-10',
-            base: 'bg-black/75 px-2 py-4 bg-stone-900dark:bg-stone-900 sm:px-4 shadow-neutral-800 z-10',
+            base: 'bg-[#2B2B28] px-2 py-4 bg-stone-900dark:bg-stone-900 sm:px-4 shadow-neutral-800 z-10',
             rounded: {
                 on: '',
                 off: '',
@@ -45,7 +45,7 @@ export default {
         },
         dropdown: {
             floating: {
-                target: 'w-fit hover:text-yellow-300',
+                target: 'w-fit hover:bg-transparent',
                 base: 'absolute inline-block rounded-lg py-2 px-3 text-sm font-medium shadow-sm',
                 animation: 'transition-opacity',
                 hidden: 'invisible opacity-0',
