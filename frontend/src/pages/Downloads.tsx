@@ -4,7 +4,7 @@ import React from 'react';
 function Downloads() {
     return (
         <>                                      
-            <div className="p-8 flex flex-row items-end justify-around border-y-4 border-yellow-500 py-5 bg-green-50/20" > {/* bg-green-50/20 */}
+            <div className="p-8 flex flex-row items-end justify-around" > {/* bg-green-50/20 */}
                 <div className="max-w-sm">
                     <div className="text-start font-bold text-4xl uppercase mb-8">
                         Download  wyd
@@ -47,57 +47,57 @@ function Downloads() {
                 </div>
                 <div>
                     <div className="text-left mt-5 font-bold text-2xl uppercase mb-8">
-                        Requerimentos do Sistema
+                        Requesitos do Sistema
                     </div>
 
-                    <Table className='border-8 border-stone-800'>
+                    <Table className='border-4 border-[#E3B04B]'>
                         <Table.Head>
-                            <Table.HeadCell className="bg-yellow-600"></Table.HeadCell>
-                            <Table.HeadCell className="bg-yellow-600 text-slate-50 border-2 border-stone-800">Mínimo</Table.HeadCell>
-                            <Table.HeadCell className="bg-yellow-600 text-slate-50 border-2 border-stone-800">Recomendado</Table.HeadCell>
+                            <Table.HeadCell className="bg-[#E3B04B]"></Table.HeadCell>
+                            <Table.HeadCell className="bg-[#E3B04B] text-slate-50 border-2 border-[#E3B04B]">Mínimo</Table.HeadCell>
+                            <Table.HeadCell className="bg-[#E3B04B] text-slate-50 border-2 border-[#E3B04B]">Recomendado</Table.HeadCell>
                         </Table.Head>
                         <Table.Body>
-                            <Table.Row className="bg-yellow-400">
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                            <Table.Row className="bg-[#2B2B28]">
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     Processador
                                 </Table.Cell>
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     Pentium III 1,6GHz
                                 </Table.Cell>
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     Pentium 4 2.8GHz +
                                 </Table.Cell>
                             </Table.Row>
-                            <Table.Row className="bg-yellow-400">
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                            <Table.Row className="bg-[#2B2B28]">
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     Memória RAM
                                 </Table.Cell>
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     512MB
                                 </Table.Cell>
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     1GB
                                 </Table.Cell>
                             </Table.Row>
-                            <Table.Row className="bg-yellow-400">
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                            <Table.Row className="bg-[#2B2B28]">
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     Sistema
                                 </Table.Cell>
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     Windows XP
                                 </Table.Cell>
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     Windows 7, Windows 8, Winodws 10, Winodws 11
                                 </Table.Cell>
                             </Table.Row>
-                            <Table.Row className="bg-yellow-400">
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                            <Table.Row className="bg-[#2B2B28]">
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     Placa de Vídeo
                                 </Table.Cell>
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     NVidia FX5200/ ATI Radeon9500
                                 </Table.Cell>
-                                <Table.Cell className="text-slate-50 border-2 border-stone-800" >
+                                <Table.Cell className="text-slate-50 border-2 border-[#E3B04B]" >
                                     NVidia GeForce6600/ATI Radeon9800
                                 </Table.Cell>
                             </Table.Row>

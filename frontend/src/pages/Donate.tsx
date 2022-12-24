@@ -117,97 +117,97 @@ function Donate() {
                     </div>
                 </div>
             )}
-            <div className="text-center uppercase text-4xl font-bold mt-4 mb-2 py-3">
+            <div className="text-center text-white uppercase text-4xl font-bold mt-4 mb-2 py-3">
                 Doação
             </div>
-            <div className="my-2 p-4 rounded bg-neutral-900 border border-neutral-700 text-justify">
-                <div className="border border-neutral-700 rounded p-2 mb-2">
-                    <p className="p-2 mb-3 text-center font-bold uppercase">Ajude a manter o WYD Imperial!</p>
-                    <p className="text-justify">
-                        O WYD Imperial é um servidor gratuito, que não possui nenhum tipo de patrocínio.
-                        O servidor é mantido por doações de jogadores, que são utilizadas para pagar os custos do servidor, como hospedagem, domínio, manutenção, vps, etc.
-                        <br />
-                        <br />
-                        Você pode ajudar o servidor a permanecer online, doando para o servidor. Ao doar, você receberá um pacote de doação com itens e/ou moedas para utilizar no jogo.
-                        <br />
-                        <br />
-                        <div className="flex items-center gap-1">
-                            <svg className="w-10 h-10 inline-block text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-                                <path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm.707-9.707a1 1 0 00-1.414 0L8 8.586V11a1 1 0 102 0V8.586l1.293-1.293a1 1 0 000-1.414z" clipRule="evenodd"></path>
-                            </svg>
-                            <span className="font-bold">OBS:</span> Ao doar, você concorda com os <a onClick={() => navigate('/rules')} className="text-blue-400 cursor-pointer">Termos de Uso</a> e <a onClick={() => navigate('/rules')} className="text-blue-400 cursor-pointer">Regras</a> do servidor.
+            <div className="flex justify-center">
+                <div className="w-2/4 my-2 p-4 bg-trasparent border-4 border-neutral-700 text-justify">
+                    <div className="border-2 border-neutral-700 rounded p-2 mb-2">
+                        <p className="p-2 mb-3 text-center font-bold uppercase">Ajude a manter o WYD Lord Of The Rings!</p>
+                        <p className="text-justify">
+                            Lord Of The Rings é um servidor gratuito, que não possui nenhum tipo de patrocínio.
+                            O servidor é mantido por doações de jogadores, que são utilizadas para pagar os custos do servidor, como hospedagem, domínio, manutenção, vps, etc.
+                            <br />
+                            <br />
+                            Você pode ajudar o servidor a permanecer online, doando para o servidor. Ao doar, você receberá um pacote de doação com itens e/ou moedas para utilizar no jogo.
+                            <br />
+                            <br />
+                            <div className="flex items-center gap-1">
+                                <svg className="w-10 h-10 inline-block text-red-400" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                                    <path fillRule="evenodd" d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12zm.707-9.707a1 1 0 00-1.414 0L8 8.586V11a1 1 0 102 0V8.586l1.293-1.293a1 1 0 000-1.414z" clipRule="evenodd"></path>
+                                </svg>
+                                <span className="font-bold">OBS:</span> Ao doar, você concorda com os <a onClick={() => navigate('/rules')} className="text-blue-400 cursor-pointer">Termos de Uso</a> e <a onClick={() => navigate('/rules')} className="text-blue-400 cursor-pointer">Regras</a> do servidor.
+                            </div>
+                        </p>
+                    </div>
+                    <div className="flex gap-10 justify-center items-center py-4">
+                        <div>
+                            <img width="100px" src={PicpayImage} alt="" loading="lazy" />
                         </div>
-                    </p>
-                </div>
-                <div className="flex gap-10 justify-center items-center py-4">
-                    <div>
-                        <img width="100px" src={PicpayImage} alt="" loading="lazy" />
+                        <div>
+                            <img width="150px" src={MercadoPagoImage} alt="" loading="lazy" />
+                        </div>
+                        <div>
+                            <img width="330px" src={PaymentsImage} alt="" loading="lazy" />
+                        </div>
+                        <div>
+                            <img width="130px" src={PixImage} alt="" loading="lazy" />
+                        </div>
                     </div>
-                    <div>
-                        <img width="150px" src={MercadoPagoImage} alt="" loading="lazy" />
+                    <div className="mt-2 flex w-40 mx-auto items-center justify-center">
+                        <Button
+                            color={agree ? 'failure' : 'success'}
+                            onClick={() => setAgree(!agree)}
+                        >
+                            {agree ? 'Não concordo' : 'Concordar e doar'}
+                        </Button>
                     </div>
-                    <div>
-                        <img width="330px" src={PaymentsImage} alt="" loading="lazy" />
-                    </div>
-                    <div>
-                        <img width="130px" src={PixImage} alt="" loading="lazy" />
-                    </div>
-                </div>
-                <div className="mt-2 flex w-40 mx-auto items-center justify-center">
-                    <Button
-                        color={agree ? 'failure' : 'success'}
-                        onClick={() => setAgree(!agree)}
-                    >
-                        {agree ? 'Não concordo' : 'Concordar e doar'}
-                    </Button>
                 </div>
             </div>
             {agree && (
-                <div className="grid grid-cols-3 gap-2 items-start">
+                <div className="grid grid-cols-2 gap-6 items-start p-10">
                     {packages.map((pkg, index) => (
-                        <Card
+                        <div
                             key={index}
+                            className="bg-[#2B2B28] border-2 border-[#E3B04B]"
                         >
-                            <div className="flex justify-center">
-                                <img width="50%" src={chestImage} alt="" loading="lazy" />
-                            </div>
-                            <div className="bg-neutral-700 border border-neutral-600 rounded py-4 text-center">
+                            <div className="bg-[#E3B04B] py-4 text-center text-white font-bold">
                                 {pkg.name}
                             </div>
-                            <div className="grid grid-row-1 gap-2 text-center items-center">
-                                <div className="border border-neutral-700/50 grid grid-cols-2 items-center p-2 rounded">
+                            <div className="text-center items-center flex flex-row justify-around">
+                                <div className="p-2">
                                     <div className="pb-2 pt-1">
                                         Preço
                                     </div>
-                                    <div className="text-green-400 border border-neutral-700/50 rounded py-2">
+                                    <div className="text-green-400 rounded py-2">
                                         {pkg.price.toLocaleString('pt-br', { style: 'currency', currency: 'BRL' })}
                                     </div>
                                 </div>
-                                <div className="border border-neutral-700/50 grid grid-cols-2 items-center p-2 rounded">
+                                <div className="p-2">
                                     <div className="pb-2 pt-1">
                                         Bônus
                                     </div>
-                                    <div className="border border-neutral-700/50 rounded py-2">
+                                    <div className="py-2">
                                         {pkg.bonus}%
                                     </div>
                                 </div>
-                                <div className="border border-neutral-700/50 grid grid-cols-2 items-center p-2 rounded">
+                                <div className="p-2 ">
                                     <div className="pb-2 pt-1">
                                         Donate
                                     </div>
-                                    <div className="border border-neutral-700/50 rounded py-2">
+                                    <div className="py-2">
                                         {parseInt(pkg.donate) + Math.ceil(parseInt(pkg.donate) * parseInt(pkg.bonus) / 100)}
                                     </div>
                                 </div>
                             </div>
                             {!!pkg.items.length && (
-                                <div className="text-center py-2 px-2 rounded border-neutral-700/50 border">
+                                <div className="text-center text-white py-2 px-2 border-[#E3B04B] border-t-2 flex flex-col">
                                     <div className="pb-2 pt-1">
                                         Itens de bonificação
                                     </div>
-                                    <div className="grid grid-cols-2 gap-2">
+                                    <div className="flex justify-around">
                                         {pkg.items.map((_pkg, index) => (
-                                            <div key={index} className="border border-neutral-700/50 py-2 px-2 rounded">
+                                            <div key={index} className="py-2 px-2">
                                                 {_pkg.name}
                                             </div>
                                         ))}
@@ -238,7 +238,7 @@ function Donate() {
                                     </>
                                 )}
                             </div>
-                        </Card>
+                        </div>
                     ))}
                 </div>
             )}

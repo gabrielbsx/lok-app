@@ -80,25 +80,22 @@ function RankingHome() {
 
     return (
         <div>
-            <div className="flex justify-center gap-4 font-bold text-2xl items-center uppercase border-neutral-700 p-4 text-center">
-                <div>Ranking</div>
-            </div>
-            <div className="p-4 bg-yellow-500 rounded-lg mb-4">
+            <div className="p-4 bg-transparent rounded-lg mb-4">
                 <div className="flex justify-between items-center gap-10">
                     <div>
                         <label>Ranqueamento por: </label>
                         <select
-                            className="bg-white-300 text-yellow-500 px-4 py-1 outline-none rounded-md focus:outline-none"
+                            className="bg-white-300 text-[#2B2B28] px-4 py-1 outline-none rounded-md focus:outline-none"
                             onChange={(e) => setOrder(e.target.value)}
                         >
                             <option value="evolution_order" selected>Level</option>
-                            <option value="elo">Elo</option>
-                            {/* <option value="kills">Kills</option> */}
-                            {/* <option value="deaths">Deaths</option> */}
                         </select>
                     </div>
+                    <div className="text-white flex justify-center gap-4 font-bold text-2xl items-center uppercase border-neutral-700 p-4 text-center">
+                        <div>Ranking</div>
+                    </div>
                     <button
-                        className="bg-blue-700 text-neutral-100 px-4 py-2 outline-none rounded-md focus:outline-none"
+                        className="text-white bg-[#2B2B28] text-neutral-100 px-4 py-2 outline-none rounded-md focus:outline-none"
                         onClick={() => setRefresh(!refresh)}
                     >
                         Atualizar ranking
@@ -106,33 +103,29 @@ function RankingHome() {
                 </div>
             </div>
             {!loading ? (
-                <Table className="border-8 border-stone-800 shadow-neutral-900 shadow-2xl">
+                <Table className="shadow-neutral-900 shadow-2xl">
                     <Table.Head>
-                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">#</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Nick</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Level</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Classe</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Evolução</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Elo</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Kills</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Deaths</Table.HeadCell>
-                        <Table.HeadCell className="dark:bg-yellow-500 text-red-100">Reino</Table.HeadCell>
+                        <Table.HeadCell className="bg-[#2B2B28] text-red-100">#</Table.HeadCell>
+                        <Table.HeadCell className="bg-[#2B2B28] text-red-100">Nick</Table.HeadCell>
+                        <Table.HeadCell className="bg-[#2B2B28] text-red-100">Level</Table.HeadCell>
+                        <Table.HeadCell className="bg-[#2B2B28] text-red-100">Classe</Table.HeadCell>
+                        <Table.HeadCell className="bg-[#2B2B28] text-red-100">Evolução</Table.HeadCell>
+                        <Table.HeadCell className="bg-[#2B2B28] text-red-100">Reino</Table.HeadCell>
                     </Table.Head>
                     <Table.Body className="divide-y">
                         {ranking.map((character, index) => (
                             <Table.Row
                                 // className={`${getKingdom(character.kingdom)} border-neutral-800 hover:text-white hover:opacity-60`}
-                                className={`bg-neutral-900 border-neutral-800 hover:text-white hover:opacity-60`}
+                                className={`bg-[#242424] border-neutral-800 hover:text-white hover:opacity-60`}
                                 key={index}
                             >
                                 <Table.Cell>
                                     <div
                                         className={
-                                            `${
-                                                (index + 1) + ((page - 1) * 6) === 1 ? 'border-2 border-yellow-500 bg-yellow-700 rounded-lg font-bold text-white flex justify-center items-center' :
-                                                (index + 1) + ((page - 1) * 6) === 2 ? 'border-2 border-yellow-500 bg-yellow-700 rounded-lg font-bold text-white flex justify-center items-center' :
-                                                (index + 1) + ((page - 1) * 6) === 3 ? 'border-2 border-yellow-500 bg-yellow-700 rounded-lg font-bold text-white flex justify-center items-center' :
-                                                'flex justify-center items-center'
+                                            `${(index + 1) + ((page - 1) * 6) === 1 ? 'text-[#E3B04B] rounded-sm font-bold text-white flex justify-center items-center' :
+                                                (index + 1) + ((page - 1) * 6) === 2 ? 'text-[#E3B04B] rounded-sm font-bold text-white flex justify-center items-center' :
+                                                    (index + 1) + ((page - 1) * 6) === 3 ? 'text-[#E3B04B] rounded-sm font-bold text-white flex justify-center items-center' :
+                                                        'flex justify-center items-center'
                                             } w-5 block`
                                         }
                                     >
@@ -140,7 +133,7 @@ function RankingHome() {
                                     </div>
                                 </Table.Cell>
                                 <Table.Cell className="flex items-center">
-                                    {character.guild_id && (
+                                    {/* {character.guild_id && (
                                         <img
                                             src={`https://api.wydimperial.com/guilds/b0${1000000 + character.guild_id}.bmp`}
                                             className={`rounded w-5 h-5 mr-1 ${getGuildMedal(character.guild_level)}`}
@@ -149,13 +142,13 @@ function RankingHome() {
                                             }}
                                             alt=""
                                         />
-                                    )}
+                                    )} */}
                                     <span
                                         className={
-                                            ((index + 1) + ((page - 1) * 6)) === 1 ? 'text-yellow-300 font-bold text-lg' :
-                                            ((index + 1) + ((page - 1) * 6)) === 2 ? 'text-yellow-300 font-bold text-lg' :
-                                            ((index + 1) + ((page - 1) * 6)) === 3 ? 'text-yellow-300 font-bold text-lg' :
-                                            'text-white'
+                                            ((index + 1) + ((page - 1) * 6)) === 1 ? 'text-[#E3B04B] font-bold text-lg' :
+                                                ((index + 1) + ((page - 1) * 6)) === 2 ? 'text-[#E3B04B] font-bold text-lg' :
+                                                    ((index + 1) + ((page - 1) * 6)) === 3 ? 'text-[#E3B04B] font-bold text-lg' :
+                                                        'text-white'
                                         }
                                     >
                                         {character.nick}
@@ -184,9 +177,6 @@ function RankingHome() {
                                     )}
                                 </Table.Cell>
                                 <Table.Cell>{character.evolution}</Table.Cell>
-                                <Table.Cell>{character.elo}</Table.Cell>
-                                <Table.Cell>{character.kills}</Table.Cell>
-                                <Table.Cell>{character.deaths}</Table.Cell>
                                 <Table.Cell>
                                     {character.kingdom === 'Akelonia' && (
                                         <img src={KingdomRedImage} alt="Kingdom Red" className="w-5 rounded-lg" />
@@ -204,7 +194,7 @@ function RankingHome() {
                     <Spinner size="xl" />
                 </div>
             )}
-            < div className="flex justify-center overflow-hidden">
+            < div className="flex justify-center overflow-hidden pt-8">
                 {meta && !characterSelected && (
                     <ReactPaginate
                         previousLabel={'Voltar'}

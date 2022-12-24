@@ -37,28 +37,28 @@ function NewsHome() {
     const handlePageClick = (data: { selected: number }) => setPage(data.selected + 1);
 
     return (
-        <div className="text-neutral-200 flex flex-col rounded-lg p-3">
-            <div className="text-center font-bold uppercase text-4xl">
+        <div className="text-neutral-200 flex flex-col mx-10 rounded-lg pb-16">
+            <div className="text-center text-white font-bold uppercase text-4xl pb-6">
                 Notícias
             </div>
             <div className="mt-4">
                 {news ? (
                     <>
                         {!loading ? (
-                            <div className="grid grid-cols-1 lg:grid-cols-3 gap-4">
+                            <div className=" grid grid-cols-3 gap-6 px-8">
                                 {news.map((news: News) => (
-                                    <div key={news.id} className="flex flex-col rounded-lg bg-neutral-900 overflow-hidden border-8 border-neutral-900 shadow-2xl shadow-neutral-900">
+                                    <div key={news.id} className="flex flex-col rounded-sm bg-[#2B2B28] overflow-hidden ">
                                         <a href="#" onClick={() => goToNews(news.slug)}>
                                             <img
-                                                className="h-100 w-full object-cover hover:opacity-75"
+                                                className="h-100 w-full object-cover hover:opacity-50"
                                                 src={`${news.thumbnail as string}`} alt={news.title}
                                             />
                                         </a>
                                         <div className="p-5">
-                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-neutral-900 dark:text-white">{news.title}</h5>
+                                            <h5 className="mb-2 text-2xl font-bold tracking-tight text-[#E3B04B]">{news.title}</h5>
                                             <p className="text-neutral-700 dark:text-neutral-300 mb-4">{news.description}</p>
                                             <a
-                                                className="text-neutral-900 dark:text-white font-bold hover:text-neutral-700 dark:hover:text-neutral-300 transition-colors duration-200 bg-neutral-100 dark:bg-neutral-700 hover:bg-neutral-200 dark:hover:bg-neutral-600 rounded-lg px-4 py-2 inline-flex items-center"
+                                                className="text-[#E3B04B] font-bold transition-colors duration-200 bg-[#39311D] border-4 border-[#FFD369]  hover:bg-[#292929]/50 px-4 py-2 inline-flex items-center"
                                                 href="#"
                                                 onClick={() => goToNews(news.slug)}
                                             >
@@ -83,10 +83,10 @@ function NewsHome() {
                                     onPageChange={handlePageClick}
                                     activeClassName={'active'}
                                     containerClassName={'xs:mt-0 mt-2 inline-flex items-center -space-x-px'}
-                                    previousClassName={'ml-0 rounded-l-lg border border-neutral-300 bg-white py-2 px-3 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white'}
-                                    nextClassName={'rounded-r-lg border border-neutral-300 bg-white py-2 px-3 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-yellow-500 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white'}
-                                    pageClassName={'w-12 border border-neutral-300 text-center bg-white py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white'}
-                                    breakClassName={'w-12 border border-neutral-300 text-center bg-white py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white'}
+                                    previousClassName={'ml-0 rounded-l-lg bg-[#2B2B28] py-2 px-3 leading-tight text-white hover:bg-[#39311D]  hover:text-[#FFD369]'}
+                                    nextClassName={'rounded-r-lg bg-[#2B2B28] py-2 px-3 leading-tight text-white hover:bg-[#39311D] hover:text-[#FFD369]'}
+                                    pageClassName={'w-12 text-center bg-[#2B2B28] py-2 leading-tight text-white hover:text-[#FFD369]'}
+                                    breakClassName={'w-12 text-center bg-[#2B2B28] py-2 leading-tight text-white hover:bg-[#39311D]  hover:text-[#FFD369]'}
                                     activeLinkClassName={'bg-neutral-600 block w-full rounded-lg'}
                                     forcePage={meta.current_page - 1}
                                 />

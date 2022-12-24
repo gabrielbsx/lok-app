@@ -44,7 +44,8 @@ function Menu() {
     const page = path.split('/')[1] === '' ? 'home' : path.split('/')[1];
 
     return (
-        <div className="m-0 z-10 sticky top-0">
+        // sticky
+        <div className="m-0 z-10 top-0 sticky">
             <Helmet>
                 <title>WYD Imperial - {page}</title>
                 <meta name="description" content={`WYD Imperial - ${page}`} />
@@ -72,36 +73,26 @@ function Menu() {
                         alt="Imperial Logo"
                     />
                 </Navbar.Brand>
-                
+
                 <Navbar.Collapse>
                     <div className="items-center flex gap-4 md:flex-row flex-col">
-                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/' ? "text-yellow-400" : ""}`} to="/">
+                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/' ? "text-[#E3B04B] underline underline-offset-8" : ""}`} to="/">
                             Início
                         </Link>
-                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/news' ? "text-yellow-400" : ""}`} to="/news">
+                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/news' ? "text-[#E3B04B] underline underline-offset-8" : ""}`} to="/news">
                             Notícias
                         </Link>
-                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/downloads' ? "text-yellow-400" : ""}`} to="/downloads">
+                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/downloads' ? "text-[#E3B04B] underline underline-offset-8" : ""}`} to="/downloads">
                             Descarregar
                         </Link>
-                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/donate' ? "text-yellow-400" : ""}`} to="/donate">
-                            Ajuda
+                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/donate' ? "text-[#E3B04B] underline underline-offset-8" : ""}`} to="/donate">
+                            Loja
                         </Link>
                         <Dropdown
                             arrowIcon={true}
                             inline={true}
                             label="O Jogo"
                         >
-                            <Dropdown.Item onClick={() => navigate('/history')}>
-                                <Link className={location.pathname === '/history' ? "text-neutral-400" : ""} to="/history">
-                                    História
-                                </Link>
-                            </Dropdown.Item>
-                            <Dropdown.Item onClick={() => navigate('/interface')}>
-                                <Link className={location.pathname === '/interface' ? "text-neutral-400" : ""} to="/interface">
-                                    Interface
-                                </Link>
-                            </Dropdown.Item>
                             <Dropdown.Item onClick={() => navigate('/rules')}>
                                 <Link className={location.pathname === '/rules' ? "text-neutral-400" : ""} to="/rules">
                                     Regras
@@ -118,130 +109,113 @@ function Menu() {
                                 </Link>
                             </Dropdown.Item>
                         </Dropdown>
-                        <Dropdown
-                            arrowIcon={true}
-                            inline={true}
-                            label="Suporte"
-                        >
-                            {/* <Dropdown.Item onClick={() => navigate('/faq')}>
-                                    <Link className={location.pathname === '/faq' ? "text-red-400" : ""} to="/faq">
-                                        FAQ
-                                    </Link>
-                                </Dropdown.Item> */}
-                            {/* <Dropdown.Item onClick={() => navigate('/support')}>
-                                    <Link className={location.pathname === '/support' ? "text-red-400" : ""} to="/support">
-                                        Suporte
-                                    </Link>
-                                </Dropdown.Item> */}
-                            <Dropdown.Item onClick={() => navigate('/contact')}>
-                                <Link className={location.pathname === '/contact' ? "text-neutral-400" : ""} to="/contact">
-                                    Contato
-                                </Link>
-                            </Dropdown.Item>
-                        </Dropdown>
+                        <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/contact' ? "text-[#E3B04B] underline underline-offset-8" : ""}`} to="/contact">
+                            Suporte
+                        </Link>
                         <div className="flex flex-wrap gap-2 md:order-2">
-                    {/*<DarkThemeToggle />*/}
-                    <Dropdown
-                        arrowIcon={false}
-                        // inline={true}
-                        size="sm"
-                        label={localStorage.getItem('token') !== null ? (
-                            'Conta'
-                        ) : (
-                            <div className="bg-neutral-700 border-4 hover:bg-neutral-900 border-neutral-500 shadow p-2 text-neutral-200 rounded-2xl">
-                                <UserIcon className="h-5 w-5" />
-                                <span className="hidden">
-                                    Painel de Controle
-                                </span>
-                            </div>
-                        )}
-                    >
-                        {localStorage.getItem('token') !== null && user ? (
-                            <div>
-                                <Dropdown.Header>
-                                    <span className="block text-sm">
-                                        <strong>
-                                            <span className="text-neutral-700 dark:text-white">
-                                                {user.name || 'Sem nome'}
+                            {/*<DarkThemeToggle />*/}
+                            <Dropdown
+                                color=''
+                                arrowIcon={false}
+                                // inline={true}
+                                size="sm"
+                                label={localStorage.getItem('token') !== null ? (
+                                    'Conta'
+                                ) : (
+                                    <div className="bg-[#E3B04B] px-4 py-3 hover:text-white">
+                                        Conta
+                                        <span className="hidden">
+                                            Painel de Controle
+                                        </span>
+                                    </div>
+                                )}
+                            >
+                                {localStorage.getItem('token') !== null && user ? (
+                                    <div>
+                                        <Dropdown.Header>
+                                            <span className="block text-sm">
+                                                <strong>
+                                                    <span className="text-neutral-700 dark:text-white">
+                                                        {user.name || 'Sem nome'}
+                                                    </span>
+                                                </strong>
                                             </span>
-                                        </strong>
-                                    </span>
-                                    <span className="block truncate text-sm font-medium">
-                                        {user.email || 'Sem e-mail'}
-                                    </span>
-                                </Dropdown.Header>
-                                <Dropdown.Item onClick={() => navigate('/profile')}>
-                                    <Link to="/profile">
-                                        Perfil
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => navigate('/donation')}>
-                                    <Link to="/donation">
-                                        Doação
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => navigate('/guildmark')}>
-                                    <Link to="/guildmark">
-                                        Guildmark
-                                    </Link>
-                                </Dropdown.Item>
-                                {user!.access_level === 'Admin' && (
-                                    <>
-                                        <Dropdown.Divider />
-                                        <div className="py-1 text-neutral-400 text-center">
-                                            Administração
-                                        </div>
-                                        <Dropdown.Item onClick={() => navigate('/admin/news')}>
-                                            <Link to="/admin/news">
-                                                Notícias
+                                            <span className="block truncate text-sm font-medium">
+                                                {user.email || 'Sem e-mail'}
+                                            </span>
+                                        </Dropdown.Header>
+                                        <Dropdown.Item onClick={() => navigate('/profile')}>
+                                            <Link to="/profile">
+                                                Perfil
                                             </Link>
                                         </Dropdown.Item>
-                                        <Dropdown.Item onClick={() => navigate('/admin/donate')}>
-                                            <Link to="/admin/donate">
+                                        <Dropdown.Item onClick={() => navigate('/donation')}>
+                                            <Link to="/donation">
                                                 Doação
                                             </Link>
                                         </Dropdown.Item>
-                                    </>
-                                )}
-                                <Dropdown.Divider />
-                                <Dropdown.Item onClick={logoutHandle}>
-                                    Sair
-                                </Dropdown.Item>
-                            </div>
-                        ) : (
-                            <div>
-                                <Dropdown.Header>
-                                    <span className="block text-sm">
-                                        <strong>
-                                            <span className="text-neutral-700 dark:text-white">
-                                                Painel de Usuário
+                                        <Dropdown.Item onClick={() => navigate('/guildmark')}>
+                                            <Link to="/guildmark">
+                                                Guildmark
+                                            </Link>
+                                        </Dropdown.Item>
+                                        {user!.access_level === 'Admin' && (
+                                            <>
+                                                <Dropdown.Divider />
+                                                <div className="py-1 text-neutral-400 text-center">
+                                                    Administração
+                                                </div>
+                                                <Dropdown.Item onClick={() => navigate('/admin/news')}>
+                                                    <Link to="/admin/news">
+                                                        Notícias
+                                                    </Link>
+                                                </Dropdown.Item>
+                                                <Dropdown.Item onClick={() => navigate('/admin/donate')}>
+                                                    <Link to="/admin/donate">
+                                                        Doação
+                                                    </Link>
+                                                </Dropdown.Item>
+                                            </>
+                                        )}
+                                        <Dropdown.Divider />
+                                        <Dropdown.Item onClick={logoutHandle}>
+                                            Sair
+                                        </Dropdown.Item>
+                                    </div>
+                                ) : (
+                                    <div>
+                                        <Dropdown.Header>
+                                            <span className="block text-sm">
+                                                <strong>
+                                                    <span className="text-neutral-700 dark:text-white">
+                                                        Painel de Usuário
+                                                    </span>
+                                                </strong>
                                             </span>
-                                        </strong>
-                                    </span>
-                                    <span className="block truncate text-sm font-medium">
-                                        Acesse sua conta para continuar
-                                    </span>
-                                </Dropdown.Header>
-                                <Dropdown.Item onClick={() => navigate('/sign-in')}>
-                                    <Link className={path === '/sign-in' ? 'text-blue-400' : ''} to="/sign-in">
-                                        Entrar
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => navigate('/sign-up')}>
-                                    <Link className={path === '/sign-up' ? 'text-blue-400' : 'text-neutral-300'} to="/sign-up">
-                                        Cadastrar
-                                    </Link>
-                                </Dropdown.Item>
-                                <Dropdown.Item onClick={() => navigate('/recovery-password')}>
-                                    <Link className={path === '/recovery-password' ? 'text-blue-400' : ''} to="/recovery-password">
-                                        Recuperar Senha
-                                    </Link>
-                                </Dropdown.Item>
-                            </div>
-                        )}
-                    </Dropdown>
-                    <Navbar.Toggle />
-                </div>
+                                            <span className="block truncate text-sm font-medium">
+                                                Acesse sua conta para continuar
+                                            </span>
+                                        </Dropdown.Header>
+                                        <Dropdown.Item onClick={() => navigate('/sign-in')}>
+                                            <Link className={path === '/sign-in' ? 'text-blue-400' : ''} to="/sign-in">
+                                                Entrar
+                                            </Link>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item onClick={() => navigate('/sign-up')}>
+                                            <Link className={path === '/sign-up' ? 'text-blue-400' : 'text-neutral-300'} to="/sign-up">
+                                                Cadastrar
+                                            </Link>
+                                        </Dropdown.Item>
+                                        <Dropdown.Item onClick={() => navigate('/recovery-password')}>
+                                            <Link className={path === '/recovery-password' ? 'text-blue-400' : ''} to="/recovery-password">
+                                                Recuperar Senha
+                                            </Link>
+                                        </Dropdown.Item>
+                                    </div>
+                                )}
+                            </Dropdown>
+                            <Navbar.Toggle />
+                        </div>
                     </div>
                 </Navbar.Collapse>
             </Navbar>
@@ -250,6 +224,12 @@ function Menu() {
                     <Spinner aria-label="Extra large spinner" size="xl" />
                 </div>
             )}
+            {/* <div className="
+            bg-scroll  
+            w-full h-96 bg-cover 
+            bg-center bg-[url('https://i.postimg.cc/YCnJCs5t/banner-Lok-Trans.png')]
+            mb-8 opacity-50">
+            </div> */}
         </div>
     );
 }
