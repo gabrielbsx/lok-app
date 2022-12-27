@@ -152,7 +152,7 @@ function Guilmark(): JSX.Element {
     const onHandleGuildmark = (guildmark: string) => setGuildSelected(guildmark.replace('../../', '/'));
 
     return (
-        <>
+        <div className="mx-10">
             <article className="px-3 py-4 border border-[#FFD369] bg-[#2B2B28]">
                 <header className="text-center font-bold py-3 bg-[#39311D] border border-[#FFD369] text-[#E3B04B]">
                     <h1>Guildmark</h1>
@@ -311,7 +311,7 @@ function Guilmark(): JSX.Element {
                     )}
                 </div>
             </article>
-        </>
+        </div>
     );
 }
 

@@ -5,7 +5,7 @@ import { faDiscord, faFacebook } from '@fortawesome/free-brands-svg-icons';
 function Contact(): JSX.Element {
     return (
         <div className='flex justify-center'>
-            <div className="w-2/4 border border-[#FFD369] bg-[#2B2B28] px-4 py-4">
+            <div className="w-3/4 md:w-2/4 border border-[#FFD369] bg-[#2B2B28] px-4 py-4">
                 <header className="text-white border-b border-[#FFD369] text-2xl font-bold text-center uppercase">
                     <h1>Contato</h1>
                 </header>

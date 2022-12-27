@@ -105,7 +105,7 @@ function Donation() {
   }
 
   return (
-    <>
+    <div className='w-3/4 flex flex-col mx-auto'>
       {modal && (
         <div className="fixed shadow w-full h-full flex flex-col gap-2 top-0 left-0 bg-black bg-opacity-50 z-50 justify-center items-center">
           <div className="flex flex-col gap-4">
@@ -120,7 +120,7 @@ function Donation() {
       <div className="text-center mt-4 bg-[#39311D] border-[#FFD369] text-[#FFD369] border mb-2 py-3">
         Pacotes de doação
       </div>
-      <div className="my-2 p-4 bg-[#2B2B28] border-[#FFD369] border text-justify">
+      <div className="my-2 p-2 sm:p-4 bg-[#2B2B28] border-[#FFD369] border text-justify">
         <div className=" bg-[#2B2B28] border-[#FFD369] p-2 mb-2">
           <p className="bg-[#39311D] text-[#E3B04B] p-2 mb-3 text-center font-bold">Ajude a manter o WYD Imperial!</p>
           <div className="py-1 px-3">
@@ -133,7 +133,7 @@ function Donation() {
         </div>
         <div className="flex justify-center p-2 my-4  border-[#FFD369]  flex-col">
           <p className="bg-neutral-700 text-center text-white font-bold p-2 uppercase">Métodos de pagamento</p>
-          <div className="flex gap-10 justify-center items-center bg-neutral-800 p-2">
+          <div className="flex flex-col sm:flex-row gap-10 justify-center items-center bg-neutral-800 p-4 sm:p-2">
             <div>
               <img width="100px" src={PicpayImage} alt="" loading="lazy" />
             </div>
@@ -283,7 +283,7 @@ function Donation() {
           </Table>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

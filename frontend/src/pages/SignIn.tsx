@@ -68,7 +68,7 @@ function SignIn() {
 
     return (
         <div className='flex justify-center'>
-            <div className="w-2/4 my-4 flex justify-center py-16 border border-[#FFD369] bg-[#2B2B28]">
+            <div className="w-3/4 md:w-2/4 my-4 flex justify-center py-16 border border-[#FFD369] bg-[#2B2B28]">
                 <form method="POST" onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 w-3/4">
                     <div>
                         {error && (

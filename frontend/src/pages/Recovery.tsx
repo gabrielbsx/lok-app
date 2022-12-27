@@ -106,8 +106,8 @@ function Recovery() {
 
     return (
         <div className='flex justify-center'>
-            <div className="w-2/4">
-                <div className="my-4 p-16 border border-[#FFD369] bg-[#2B2B28]">
+            <div className="w-3/4 md:w-2/4">
+                <div className="my-4 p-4 sm:p-16 border border-[#FFD369] bg-[#2B2B28]">
                     <form method="POST" onSubmit={handleSubmitRecoveryToken(onSubmitRecoveryToken)} className="flex flex-col gap-4 p-4">
                         <div>
                             {error && (

@@ -62,8 +62,8 @@ function SignIn() {
 
     return (
         <div className='flex justify-center'>
-            <div className="w-2/4 my-16 p-16 border border-[#FFD369] bg-[#2B2B28]">
-                <form method="POST" onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 p-6">
+            <div className="w-3/4 md:w-2/4 my-16 p-4 sm:p-16 border border-[#FFD369] bg-[#2B2B28]">
+                <form method="POST" onSubmit={handleSubmit(onSubmit)} className="flex flex-col gap-4 p-2">
                     <div>
                         {error && (
                             <div className="mb-4">

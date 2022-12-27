@@ -102,7 +102,7 @@ function Profile() {
     }
 
     return (
-        <>
+        <div className='w-3/4 flex flex-col mx-auto'>
             <div className="grid grid-cols-1 gap-2 mb-4">
                 <div className="flex flex-col justify-center items-center">
                     <h1 className="text-white py-8 text-2xl font-bold">Perfil</h1>
@@ -145,8 +145,8 @@ function Profile() {
                         <small className="text-yellow-300 small">* Para efetuar quaisquer operações é necessário o TOKEN</small>
                     </div>
                 <form method="POST" onSubmit={handleSubmit(onSubmit)} className="col-span-2 gap-4">
-                    <div className="flex justify-between gap-4">
-                        <div className="w-full bg-[#2B2B28] py-8 px-8 border-neutral-700 border border-[#FFD369]">
+                    <div className="flex flex-col md:flex-row justify-between gap-4">
+                        <div className="w-full bg-[#2B2B28] py-4 px-4 sm:py-8 sm:px-8 border-neutral-700 border border-[#FFD369]">
                             <div className="text-center py-4 bg-neutral-700 rounded-lg border-b border-neutral-600">
                                 Atualizar Perfil
                             </div>
@@ -199,7 +199,7 @@ function Profile() {
 
                             </div>
                         </div>
-                        <div className="w-full bg-[#2B2B28] py-8 px-8 order border border-[#FFD369]">
+                        <div className="w-full bg-[#2B2B28] py-4 px-4 sm:py-8 sm:px-8 order border border-[#FFD369]">
                             <div className="text-center py-4 bg-neutral-700 rounded-lg border-b border-neutral-600">
                                 Alterar Senha
                             </div>
@@ -271,7 +271,7 @@ function Profile() {
                     </div>
                 </form>
             </div>
-        </>
+        </div>
     );
 }
 
