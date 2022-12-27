@@ -47,7 +47,7 @@ function Menu() {
         // sticky
         <div className="m-0 z-10 top-0 sticky">
             <Helmet>
-                <title>WYD Imperial - {page}</title>
+                <title>LOK - {page}</title>
                 <meta name="description" content={`WYD Imperial - ${page}`} />
                 <meta name="keywords" content="WYD Imperial - Home, With Your Destiny, WYD, MMORPG, WYDBR, WYD BR, WYD ONLINE" />
                 <meta name="author" content="WYD Imperial" />

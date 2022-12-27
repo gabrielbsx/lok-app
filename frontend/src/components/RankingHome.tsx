@@ -80,8 +80,8 @@ function RankingHome() {
 
     return (
         <div>
-            <div className="p-4 bg-transparent rounded-lg mb-4">
-                <div className="flex justify-between items-center gap-10">
+            <div className="p-4 bg-transparent mb-4">
+                <div className="flex flex-col sm:flex-row justify-between items-center gap-10">
                     <div>
                         <label>Ranqueamento por: </label>
                         <select

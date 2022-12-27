@@ -4,8 +4,8 @@ import React from 'react';
 function Downloads() {
     return (
         <>                                      
-            <div className="p-8 flex flex-row items-end justify-around" >
-                <div className="max-w-sm mr-10">
+            <div className="p-8 flex justify-center flex-col items-center md:flex-row md:items-end" >
+                <div className="max-w-sm md:mr-10">
                     <div className="text-start font-bold text-4xl uppercase mb-8">
                         Download  wyd
                     </div>
@@ -46,7 +46,7 @@ function Downloads() {
                     </Card>
                 </div>
                 <div>
-                    <div className="text-white text-left mt-5 font-bold text-2xl uppercase mb-8">
+                    <div className="text-white text-left mt-16  font-bold text-2xl uppercase mb-8 lg:mt-5">
                         Requesitos do Sistema
                     </div>
 

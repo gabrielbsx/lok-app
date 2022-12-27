@@ -105,7 +105,7 @@ function Donate() {
     };
 
     return (
-        <>
+        <div className='mx-16'>
             {modal && (
                 <div className="fixed shadow w-full h-full flex flex-col gap-2 top-0 left-0 bg-black bg-opacity-50 z-50 justify-center items-center">
                     <div className="flex flex-col gap-4">
@@ -120,7 +120,7 @@ function Donate() {
             <div className="text-center text-white uppercase text-4xl font-bold my-8 py-3">
                 Doação
             </div>
-                <div className="grid grid-cols-3 gap-8 items-start pb-8">
+                <div className="grid grid-cols-1 gap-8 items-start pb-8 md:grid-cols-2 lg:grid-cols-3">
                     {packages.map((pkg, index) => (
                         <div
                             key={index}
@@ -129,9 +129,9 @@ function Donate() {
                             <div className="bg-[#39311D] py-4 text-center text-[#E3B04B] font-bold border-2 border-[#FFD369]">
                                 {pkg.name}
                             </div>
-                            <div className="text-center items-center flex flex-row justify-around">
+                            <div className="text-center items-center flex flex-col justify-around sm:flex-row">
                                 <div className="p-2">
-                                    <div className="pb-2 pt-1">
+                                    <div className="pb-2 pt-1 font-bold">
                                         Preço
                                     </div>
                                     <div className="text-green-400 rounded py-2">
@@ -139,7 +139,7 @@ function Donate() {
                                     </div>
                                 </div>
                                 <div className="p-2">
-                                    <div className="pb-2 pt-1">
+                                    <div className="pb-2 pt-1 font-bold">
                                         Bônus
                                     </div>
                                     <div className="py-2">
@@ -147,7 +147,7 @@ function Donate() {
                                     </div>
                                 </div>
                                 <div className="p-2 ">
-                                    <div className="pb-2 pt-1">
+                                    <div className="pb-2 pt-1 font-bold">
                                         Donate
                                     </div>
                                     <div className="py-2">
@@ -157,10 +157,10 @@ function Donate() {
                             </div>
                             {!!pkg.items.length && (
                                 <div className="text-center text-white py-2 px-2 border-[#E3B04B] border-t-2 flex flex-col">
-                                    <div className="pb-2 pt-1">
+                                    <div className="pb-2 pt-1 font-bold">
                                         Itens de bonificação
                                     </div>
-                                    <div className="flex justify-around">
+                                    <div className="flex flex-col justify-around sm:flex-row">
                                         {pkg.items.map((_pkg, index) => (
                                             <div key={index} className="py-2 px-2">
                                                 {_pkg.name}
@@ -247,7 +247,7 @@ function Donate() {
                     </Table>
                 </div>
             </div>
-        </>
+        </div>
     );
 }
 

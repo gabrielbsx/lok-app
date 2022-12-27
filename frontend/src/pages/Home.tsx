@@ -39,7 +39,7 @@ function Home() {
     }, []);
 
     return (
-        <div>
+        <div className='overflow-hidden'>
             {/* <div className="
             w-full h-96 bg-green-500 bg-cover 
             bg-center bg-[url('https://images5.alphacoders.com/861/861521.jpg')]
@@ -47,7 +47,7 @@ function Home() {
             </div> */}
             <div className="
             bg-scroll  
-            w-full h-96 bg-cover 
+            w-screen h-96 bg-cover 
             bg-center bg-[url('https://i.postimg.cc/kgVWJprd/aa.png')]
             mb-8 opacity-50">
             </div>
@@ -61,7 +61,7 @@ function Home() {
                         <RankingHome />
                     </div>
                     <iframe
-                        className="w-full lg:col-span-2 xl:col-span-1 pt-28"
+                        className="w-full col-span-3 lg:col-span-4 xl:col-span-1 pt-28"
                         src="https://ptb.discord.com/widget?id=975216695222358046&theme=dark"
                         height="500"
                         sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"

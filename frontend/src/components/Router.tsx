@@ -38,7 +38,7 @@ function Router() {
     return (
         <BrowserRouter>
             <Menu />
-            <div className="md:mt-0 mx-auto">
+            <div className="md:mt-0">
                 <Routes>
                     <Route path={"/"} element={<Home />} />
                     <Route path={"/news"} element={<News />} />

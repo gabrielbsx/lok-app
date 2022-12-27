@@ -105,171 +105,173 @@ function Recovery() {
     };
 
     return (
-        <div className="">
-            <div className="w-96 lg:mx-auto my-4 p-4 border border-[#FFD369] bg-[#2B2B28]">
-                <form method="POST" onSubmit={handleSubmitRecoveryToken(onSubmitRecoveryToken)} className="flex flex-col gap-4 p-4">
-                    <div>
-                        {error && (
-                            <div className="mb-4">
-                                <Alert color="failure">{error}</Alert>
-                            </div>
-                        )}
-
-                        <div className="mb-2 block">
-                            <Label
-                                htmlFor="username"
-                                value="Seu Usuário"
-                            />
-                        </div>
-                        <TextInput
-                            id="username"
-                            placeholder="Usuário"
-                            required={true}
-                            {...registerRecoveryToken("username", {
-                                required: 'O usuário é obrigatório',
-                            })}
-                            autoComplete="username"
-                            color={errorsRecoveryToken.username ? "failure" : "gray"}
-                        />
-                        <ErrorMessage
-                            errors={errorsRecoveryToken}
-                            name="username"
-                            render={({ message }) => <small className="text-red-400">{message}</small>}
-                        />
-                    </div>
-                    <div>
-                        <div className="mb-2 block">
-                            <Label
-                                htmlFor="token"
-                                value="Seu Token"
-                            />
-                        </div>
-                        <TextInput
-                            id="token"
-                            placeholder="Token"
-                            required={true}
-                            {...registerRecoveryToken("tokenize", {
-                                required: 'O token é obrigatório',
-                            })}
-                            autoComplete="tokenize"
-                            color={errorsRecoveryToken.tokenize ? "failure" : "gray"}
-                        />
-                        <ErrorMessage
-                            errors={errorsRecoveryToken}
-                            name="tokenize"
-                            render={({ message }) => <small className="text-red-400">{message}</small>}
-                        />
-                    </div>
-                    <div>
-                        <div className="mb-2 block">
-                            <Label
-                                htmlFor="password"
-                                value="Nova senha"
-                            />
-                        </div>
-                        <div className="flex flex-row justify-between gap-4">
-                            <div className="w-full">
-                                <TextInput
-                                    id="password"
-                                    placeholder="Nova senha"
-                                    type="password"
-                                    required={true}
-                                    {...registerRecoveryToken("password", {
-                                        required: 'A senha é obrigatório',
-                                    })}
-                                    autoComplete="password"
-                                    color={errorsRecoveryToken.password ? "failure" : "gray"}
-                                />
-                                <ErrorMessage
-                                    errors={errorsRecoveryToken}
-                                    name="password"
-                                    render={({ message }) => <small className="text-red-400">{message}</small>}
-                                />
-                            </div>
-                            <div className="w-full">
-                                <TextInput
-                                    id="passwordConfirmation"
-                                    placeholder="Repita a nova senha"
-                                    type="password"
-                                    required={true}
-                                    {...registerRecoveryToken("passwordConfirmation", {
-                                        required: 'A senha é obrigatório',
-                                    })}
-                                    autoComplete="passwordConfirmation"
-                                    color={errorsRecoveryToken.passwordConfirmation ? "failure" : "gray"}
-                                />
-                                <ErrorMessage
-                                    errors={errorsRecoveryToken}
-                                    name="passwordConfirmation"
-                                    render={({ message }) => <small className="text-red-400">{message}</small>}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                    <div className="mx-auto bg-[#39311D] border border-[#FFD369] text-[#E3B04B] hover:bg-[#292929]/50">
-                        <GoogleReCaptcha
-                            onVerify={token => setToken(token)}
-                            refreshReCaptcha={true}
-                        />
-                        <Button type="submit" color=''>
-                            {loading ? (
-                                <Spinner color="gray" size="md" />
-                            ) : (
-                                <>
-                                    Alterar senha
-                                </>
+        <div className='flex justify-center'>
+            <div className="w-2/4">
+                <div className="my-4 p-16 border border-[#FFD369] bg-[#2B2B28]">
+                    <form method="POST" onSubmit={handleSubmitRecoveryToken(onSubmitRecoveryToken)} className="flex flex-col gap-4 p-4">
+                        <div>
+                            {error && (
+                                <div className="mb-4">
+                                    <Alert color="failure">{error}</Alert>
+                                </div>
                             )}
-                        </Button>
-                    </div>
-                </form>
-            </div>
-            <div className="w-96 lg:mx-auto my-4 p-4 border border-[#FFD369] bg-[#2B2B28]">
-                <form method="POST" onSubmit={handleSubmitRecovery(onSubmitRecovery)} className="flex flex-col gap-4 p-4">
-                    <div>
-                        {error && (
-                            <div className="mb-4">
-                                <Alert color="failure">{error}</Alert>
-                            </div>
-                        )}
 
-                        <div className="mb-2 block">
-                            <Label
-                                htmlFor="mailuser1"
-                                value="Seu Usuário"
+                            <div className="mb-2 block">
+                                <Label
+                                    htmlFor="username"
+                                    value="Usuário"
+                                />
+                            </div>
+                            <TextInput
+                                id="username"
+                                placeholder="Usuário"
+                                required={true}
+                                {...registerRecoveryToken("username", {
+                                    required: 'O usuário é obrigatório',
+                                })}
+                                autoComplete="username"
+                                color={errorsRecoveryToken.username ? "failure" : "gray"}
+                            />
+                            <ErrorMessage
+                                errors={errorsRecoveryToken}
+                                name="username"
+                                render={({ message }) => <small className="text-red-400">{message}</small>}
                             />
                         </div>
-                        <TextInput
-                            id="mailuser1"
-                            placeholder="Usuário"
-                            required={true}
-                            {...registerRecovery("username", {
-                                required: 'O usuário é obrigatório',
-                            })}
-                            autoComplete="username"
-                            color={errorsRecovery.username ? "failure" : "gray"}
-                        />
-                        <ErrorMessage
-                            errors={errorsRecovery}
-                            name="username"
-                            render={({ message }) => <small className="text-red-400">{message}</small>}
-                        />
-                    </div>
-                    <div className="mx-auto bg-[#39311D] border border-[#FFD369] text-[#E3B04B] hover:bg-[#292929]/50">
-                        <GoogleReCaptcha
-                            onVerify={token => setToken(token)}
-                            refreshReCaptcha={true}
-                        />
-                        <Button type="submit" color=''>
-                            {loading ? (
-                                <Spinner color="gray" size="md" />
-                            ) : (
-                                <>
-                                    Receber token por e-mail
-                                </>
+                        <div>
+                            <div className="mb-2 block">
+                                <Label
+                                    htmlFor="token"
+                                    value="Seu Token"
+                                />
+                            </div>
+                            <TextInput
+                                id="token"
+                                placeholder="Token"
+                                required={true}
+                                {...registerRecoveryToken("tokenize", {
+                                    required: 'O token é obrigatório',
+                                })}
+                                autoComplete="tokenize"
+                                color={errorsRecoveryToken.tokenize ? "failure" : "gray"}
+                            />
+                            <ErrorMessage
+                                errors={errorsRecoveryToken}
+                                name="tokenize"
+                                render={({ message }) => <small className="text-red-400">{message}</small>}
+                            />
+                        </div>
+                        <div>
+                            <div className="mb-2 block">
+                                <Label
+                                    htmlFor="password"
+                                    value="Nova senha"
+                                />
+                            </div>
+                            <div className="flex flex-row justify-between gap-4">
+                                <div className="w-full">
+                                    <TextInput
+                                        id="password"
+                                        placeholder="Nova senha"
+                                        type="password"
+                                        required={true}
+                                        {...registerRecoveryToken("password", {
+                                            required: 'A senha é obrigatório',
+                                        })}
+                                        autoComplete="password"
+                                        color={errorsRecoveryToken.password ? "failure" : "gray"}
+                                    />
+                                    <ErrorMessage
+                                        errors={errorsRecoveryToken}
+                                        name="password"
+                                        render={({ message }) => <small className="text-red-400">{message}</small>}
+                                    />
+                                </div>
+                                <div className="w-full">
+                                    <TextInput
+                                        id="passwordConfirmation"
+                                        placeholder="Repita a nova senha"
+                                        type="password"
+                                        required={true}
+                                        {...registerRecoveryToken("passwordConfirmation", {
+                                            required: 'A senha é obrigatório',
+                                        })}
+                                        autoComplete="passwordConfirmation"
+                                        color={errorsRecoveryToken.passwordConfirmation ? "failure" : "gray"}
+                                    />
+                                    <ErrorMessage
+                                        errors={errorsRecoveryToken}
+                                        name="passwordConfirmation"
+                                        render={({ message }) => <small className="text-red-400">{message}</small>}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                        <div className="mx-auto bg-[#39311D] mt-2 border border-[#FFD369] text-[#E3B04B] hover:bg-[#292929]/50">
+                            <GoogleReCaptcha
+                                onVerify={token => setToken(token)}
+                                refreshReCaptcha={true}
+                            />
+                            <Button type="submit" color=''>
+                                {loading ? (
+                                    <Spinner color="gray" size="md" />
+                                ) : (
+                                    <>
+                                        Alterar senha
+                                    </>
+                                )}
+                            </Button>
+                        </div>
+                    </form>
+                </div>
+                <div className=" lg:mx-auto my-4 p-4 border border-[#FFD369] bg-[#2B2B28]">
+                    <form method="POST" onSubmit={handleSubmitRecovery(onSubmitRecovery)} className="flex flex-col gap-4 p-4">
+                        <div>
+                            {error && (
+                                <div className="mb-4">
+                                    <Alert color="failure">{error}</Alert>
+                                </div>
                             )}
-                        </Button>
-                    </div>
-                </form>
+
+                            <div className="mb-2 block">
+                                <Label
+                                    htmlFor="mailuser1"
+                                    value="Usuário"
+                                />
+                            </div>
+                            <TextInput
+                                id="mailuser1"
+                                placeholder="Usuário"
+                                required={true}
+                                {...registerRecovery("username", {
+                                    required: 'O usuário é obrigatório',
+                                })}
+                                autoComplete="username"
+                                color={errorsRecovery.username ? "failure" : "gray"}
+                            />
+                            <ErrorMessage
+                                errors={errorsRecovery}
+                                name="username"
+                                render={({ message }) => <small className="text-red-400">{message}</small>}
+                            />
+                        </div>
+                        <div className="mx-auto mt-2 bg-[#39311D] border border-[#FFD369] text-[#E3B04B] hover:bg-[#292929]/50">
+                            <GoogleReCaptcha
+                                onVerify={token => setToken(token)}
+                                refreshReCaptcha={true}
+                            />
+                            <Button type="submit" color=''>
+                                {loading ? (
+                                    <Spinner color="gray" size="md" />
+                                ) : (
+                                    <>
+                                        Receber token por e-mail
+                                    </>
+                                )}
+                            </Button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     );

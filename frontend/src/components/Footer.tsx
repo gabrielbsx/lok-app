@@ -7,7 +7,7 @@ function FooterCompenent() {
                 <div className="w-full text-center">
                     <Footer.Copyright
                         href="#"
-                        by="WYD IMPERIAL"
+                        by="WYD LOK"
                         year={2022}
                     />
                     <span className="text-xs text-neutral-400 uppercase">

@@ -45,7 +45,7 @@ function NewsHome() {
                 {news ? (
                     <>
                         {!loading ? (
-                            <div className=" grid grid-cols-3 gap-6 px-8">
+                            <div className=" grid grid-cols-1 gap-6 px-8 lg:grid-cols-3">
                                 {news.map((news: News) => (
                                     <div key={news.id} className="flex flex-col rounded-sm bg-[#2B2B28] overflow-hidden ">
                                         <a href="#" onClick={() => goToNews(news.slug)}>
