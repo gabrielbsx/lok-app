@@ -5,8 +5,8 @@ import DroplistImg from '../assets/images/droplist_guide.png';
 
 function Droplist() {
     return (
-        <div className="bg-neutral-800 border border-neutral-700 shadow px-4 py-4 rounded-lg">
-            <header className="font-bold text-2xl pb-4 border-b border-neutral-700 text-center mb-4">
+        <div className="bg-[#2B2B28] border border-[#E3B04B] px-4 py-4 w-3/4 mx-auto">
+            <header className="font-bold text-white text-2xl pb-4 border-b border-[#E3B04B] text-center mb-4">
                 <h1>Droplist</h1>
             </header>
             <section className="px-4 text-neutral-400">

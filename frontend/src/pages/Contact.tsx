@@ -17,7 +17,7 @@ function Contact(): JSX.Element {
                             Facebook
                         </span>
                     </a> */}
-                        <a target="_blank" href="https://discord.gg/XtYatPJCxh" className="text-white bg-[#39311D] hover:hover:bg-[#292929]/50 px-4 py-2 rounded-lg mx-2">
+                        <a target="_blank" href="https://discord.gg/XtYatPJCxh" className="text-white bg-[#39311D] hover:hover:bg-[#292929]/50 hover:border-2 border-[#FFD369]/30 px-4 py-2 rounded-lg mx-2">
                             <FontAwesomeIcon icon={faDiscord} />
                             <span className="ml-3">
                                 Discord

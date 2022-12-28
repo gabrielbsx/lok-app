@@ -82,10 +82,10 @@ function News() {
                                 onPageChange={handlePageClick}
                                 activeClassName={'active'}
                                 containerClassName={'xs:mt-0 mt-2 inline-flex items-center -space-x-px'}
-                                previousClassName={'ml-0 rounded-l-lg border border-neutral-300 bg-white py-2 px-3 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white'}
-                                nextClassName={'rounded-r-lg border border-neutral-300 bg-white py-2 px-3 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white'}
-                                pageClassName={'w-12 border border-neutral-300 text-center bg-white py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white'}
-                                breakClassName={'w-12 border border-neutral-300 text-center bg-white py-2 leading-tight text-neutral-500 hover:bg-neutral-100 hover:text-neutral-700 dark:border-neutral-700 dark:bg-neutral-700 dark:text-neutral-400 dark:hover:bg-neutral-700 dark:hover:text-white'}
+                                previousClassName={'ml-0 rounded-l-lg bg-[#2B2B28] py-2 px-3 leading-tight text-white hover:bg-[#39311D]  hover:text-[#FFD369]'}
+                                nextClassName={'rounded-r-lg bg-[#2B2B28] py-2 px-3 leading-tight text-white hover:bg-[#39311D] hover:text-[#FFD369]'}
+                                pageClassName={'w-12 text-center bg-[#2B2B28] py-2 leading-tight text-white hover:text-[#FFD369]'}
+                                breakClassName={'w-12 text-center bg-[#2B2B28] py-2 leading-tight text-white hover:bg-[#39311D]  hover:text-[#FFD369]'}
                                 activeLinkClassName={'bg-neutral-600 block w-full rounded-lg'}
                                 forcePage={meta.current_page - 1}
                             />
