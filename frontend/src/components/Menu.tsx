@@ -73,7 +73,7 @@ function Menu() {
                         alt="Imperial Logo"
                     />
                 </Navbar.Brand>
-
+                <Navbar.Toggle />
                 <Navbar.Collapse>
                     <div className="items-center flex gap-4 md:flex-row flex-col">
                         <Link className={`px-4 py-2 rounded-lg hover:text-yellow-300 ${location.pathname === '/' ? "text-[#E3B04B] underline underline-offset-8" : ""}`} to="/">
@@ -214,7 +214,7 @@ function Menu() {
                                     </div>
                                 )}
                             </Dropdown>
-                            <Navbar.Toggle />
+                            
                         </div>
                     </div>
                 </Navbar.Collapse>
