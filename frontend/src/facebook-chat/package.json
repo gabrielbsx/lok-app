@@ -1,0 +1,55 @@
+{
+  "name": "react-messenger-chat-plugin",
+  "version": "3.0.5",
+  "description": "A react component for Facebook Messenger Chat Plugin with extra Customer Chat SDK features",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*"
+  ],
+  "type": "module",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build-lib": "rollup -c",
+    "pub": "npm run build-lib && npm publish"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hueindahaus/react-messenger-chat-plugin.git"
+  },
+  "keywords": [
+    "react",
+    "messenger",
+    "chat",
+    "plugin",
+    "customer",
+    "chat"
+  ],
+  "author": "Alexander Charles Huang",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hueindahaus/react-messenger-chat-plugin/issues"
+  },
+  "homepage": "https://github.com/hueindahaus/react-messenger-chat-plugin#README.md",
+  "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-react": "^7.14.5",
+    "@rollup/plugin-node-resolve": "^13.0.0",
+    "@rollup/plugin-typescript": "^8.3.0",
+    "@storybook/addon-actions": "^6.5.0-beta.0",
+    "@storybook/addon-essentials": "^6.5.0-beta.0",
+    "@storybook/addon-links": "^6.5.0-beta.0",
+    "@storybook/react": "^6.5.0-beta.0",
+    "@types/react": "^18.0.8",
+    "babel-loader": "^8.2.2",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "rollup": "^2.52.7",
+    "rollup-plugin-babel": "^4.4.0",
+    "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-terser": "^7.0.2",
+    "typescript": "^4.6.3"
+  }
+}
